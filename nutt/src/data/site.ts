@@ -12,8 +12,8 @@ export const site = {
   tagline: 'Você nunca provou amendoim assim.',
   signature: 'Sabor que conecta.',
   // PLACEHOLDERS de contato e canais
-  instagram: 'https://www.instagram.com/nutt.oficial',
-  instagramHandle: '@nutt.oficial',
+  instagram: 'https://www.instagram.com/nuttbr/',
+  instagramHandle: '@nuttbr',
   email: 'contato@nutt.com.br',
   shopUrl: '#sabores',
   resellerUrl: 'mailto:contato@nutt.com.br?subject=Quero%20revender%20NUTT',

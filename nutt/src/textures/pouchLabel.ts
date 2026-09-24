@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type { Product } from '@/data/products';
 import { brand, drawSymbol, drawWordmark, logo } from '@/components/brand/logo';
 import { mulberry32 } from '@/utils/math';
+import { site } from '@/data/site';
 import { makeCanvas, toTexture } from './canvas';
 
 /**
@@ -212,7 +213,7 @@ export function pouchLabel(p: Product) {
   b.strokeRect(W * 0.12, H * 0.84, W * 0.76, H * 0.07);
   b.fillStyle = 'rgba(255,255,255,0.55)';
   b.font = `400 30px ${d}`;
-  b.fillText('@nutt.oficial', W * 0.16, H * 0.885);
+  b.fillText(site.instagramHandle, W * 0.16, H * 0.885);
 
   // Canvas tem origem no topo; a UV da geometria tem v=0 embaixo => flipY padrão resolve.
   const out = { map: toTexture(front.c), roughness: toTexture(rough.c, false), back: toTexture(back.c) };
