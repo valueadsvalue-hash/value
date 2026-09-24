@@ -1,13 +1,12 @@
-import { Manrope, Nunito } from 'next/font/google';
+import { Manrope, Sniglet } from 'next/font/google';
 
 /**
- * Singlet é a referência da marca. Enquanto a licença web não chega, usamos Nunito
- * (arredondada, orgânica, forte em 800–900) para títulos e Manrope para texto.
- * Para trocar: next/font/local apontando para os WOFF2 da Singlet, mantendo as variáveis.
+ * Sniglet — tipografia da identidade NUTT (arredondada, orgânica). Usada em títulos,
+ * frases e wordmark. Manrope entra só em textos corridos pequenos, para legibilidade.
  */
-export const display = Nunito({
-  subsets: ['latin'],
-  weight: ['700', '800', '900'],
+export const display = Sniglet({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '800'],
   variable: '--font-display',
   display: 'swap',
 });

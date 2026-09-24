@@ -1,6 +1,6 @@
 import { copy } from '@/data/copy';
 import { site } from '@/data/site';
-import { Symbol } from '../brand/Logo';
+import { Wordmark } from '../brand/Logo';
 
 export function Footer() {
   return (
@@ -10,8 +10,7 @@ export function Footer() {
         {copy.footer.lines[0]} <span className="accent">{copy.footer.lines[1]}</span>
       </p>
       <div className="footer__giant" aria-hidden>
-        <Symbol />
-        <span>NUTT</span>
+        <Wordmark title="" />
       </div>
       <div className="footer__bottom">
         <ul className="footer__links">
@@ -37,7 +36,7 @@ export function Footer() {
           </li>
         </ul>
         <p className="footer__copy">
-          © {new Date().getFullYear()} NUTT — Amendoins artesanais gourmet.
+          © {new Date().getFullYear()} nutt — amendoins artesanais gourmet.
         </p>
       </div>
     </footer>

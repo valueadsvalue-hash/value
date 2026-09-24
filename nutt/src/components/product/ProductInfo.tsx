@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { Product } from '@/data/products';
+import { Wordmark } from '../brand/Logo';
 import { MagneticButton } from '../ui/MagneticButton';
 
 /** Conteúdo do sabor — compartilhado entre o overlay cinematográfico e a página /sabores/<slug>. */
@@ -8,7 +9,7 @@ export function ProductInfo({ product, titleId, standalone = false }: { product:
   return (
     <>
       <div style={style}>
-        <p className="eyebrow">Sabor NUTT</p>
+        <p className="eyebrow">Sabor nutt</p>
         {standalone ? (
           <h1 id={titleId} className="detail__name display">
             {product.name}
@@ -77,10 +78,7 @@ export function ProductInfo({ product, titleId, standalone = false }: { product:
 export function PouchFallback({ product }: { product: Product }) {
   return (
     <div className="pouch-fallback" style={{ '--flavor': product.color } as CSSProperties} role="img" aria-label={`Embalagem NUTT ${product.name}`}>
-      <svg viewBox="0 0 100 114" aria-hidden>
-        <path fill="currentColor" d="M4,50 A46,46 0 0 1 96,50 L96,100 A13,13 0 0 1 70,100 L70,50 A20,20 0 0 0 30,50 L30,100 A13,13 0 0 1 4,100 Z" />
-      </svg>
-      <b>NUTT</b>
+      <Wordmark title="" />
       <small>{product.name}</small>
     </div>
   );

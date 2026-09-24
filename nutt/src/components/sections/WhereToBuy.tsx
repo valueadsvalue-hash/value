@@ -1,11 +1,13 @@
 import { copy } from '@/data/copy';
 import { whereToBuy } from '@/data/site';
 import { IconArrow } from '../brand/Icons';
+import { BrandPattern } from '../brand/Pattern';
 
 export function WhereToBuy() {
   return (
     <section id="onde-encontrar" className="where" aria-labelledby="where-title">
-      <p className="eyebrow">NUTT perto de você</p>
+      <BrandPattern className="where__pattern" />
+      <p className="eyebrow">nutt perto de você</p>
       <h2 id="where-title" className="where__title display">
         {copy.whereToBuy.heading}
       </h2>

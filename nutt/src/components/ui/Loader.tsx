@@ -1,7 +1,7 @@
 'use client';
 import { gsap } from 'gsap';
 import { useEffect, useRef, useState } from 'react';
-import { logo } from '../brand/logo';
+import { logo, polyPoints } from '../brand/logo';
 import { store, useStore } from '@/utils/store';
 
 /**
@@ -53,10 +53,16 @@ export function Loader({ onExit }: { onExit: () => void }) {
           <clipPath id="loader-clip">
             <path d={logo.path} />
           </clipPath>
+          <clipPath id="loader-brown">
+            <polygon points={polyPoints(logo.brown)} />
+          </clipPath>
         </defs>
         <path d={logo.path} fill="#140c07" stroke="rgba(255,106,0,.35)" strokeWidth="1" />
         <g clipPath="url(#loader-clip)">
           <rect x="0" y={fillY} width={w} height={h} fill="#FF6A00" />
+          <g clipPath="url(#loader-brown)">
+            <rect x="0" y={fillY} width={w} height={h} fill="#A34A1F" />
+          </g>
         </g>
       </svg>
       <span className="loader__pct" aria-hidden>

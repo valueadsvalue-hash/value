@@ -1,8 +1,9 @@
 import type { IngredientVisual } from './ingredients';
 
 /**
- * ⚠️ EXEMPLOS DE ESTRUTURA — NÃO PUBLICAR.
- * Os sabores abaixo são conceitos para demonstrar o sistema. Substitua pela linha oficial NUTT
+ * O primeiro item (Amendoim Caramelizado) vem da identidade visual da marca.
+ * ⚠️ Os demais são EXEMPLOS DE ESTRUTURA (placeholder: true) — NÃO PUBLICAR.
+ * Eles demonstram o sistema. Substitua pela linha oficial NUTT
  * (nomes, ingredientes, peso, perfil sensorial). Nenhum componente 3D conhece sabores:
  * adicionar um item aqui cria pouch, rótulo, ambiente, ingredientes flutuantes, página
  * /sabores/<slug>, entrada no sitemap e Schema Product automaticamente.
@@ -13,6 +14,8 @@ export type Product = {
   id: string;
   slug: string;
   name: string;
+  /** Nome no rótulo do pouch (linhas, minúsculas). Padrão: nome quebrado em 2 linhas. */
+  label?: string[];
   subtitle: string;
   /** Frases de impacto da página do sabor. */
   tagline: [string, string, string];
@@ -45,34 +48,35 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: 'caramelo-flor-de-sal',
-    slug: 'caramelo-flor-de-sal',
-    name: 'Caramelo & Flor de Sal',
-    subtitle: 'Caramelizado devagar. Salgado na medida.',
-    tagline: ['Crocante.', 'Intenso.', 'Absurdamente NUTT.'],
-    description: 'O doce profundo do caramelo feito em tacho, quebrado por cristais de flor de sal.',
-    ingredients: ['Amendoim selecionado', 'Caramelo', 'Flor de sal'],
-    ingredientsFull: null,
-    weight: '— g',
-    characteristics: ['Cobertura crocante', 'Doce e salgado', 'Pequenos lotes'],
+    // Produto da identidade visual (board de marca). Confirmar texto legal com a NUTT.
+    id: 'amendoim-caramelizado',
+    slug: 'amendoim-caramelizado',
+    name: 'Amendoim Caramelizado',
+    label: ['amendoim', 'caramelizado'],
+    subtitle: 'O equilíbrio perfeito entre crocância e doçura.',
+    tagline: ['Crocante.', 'Caramelizado.', 'Irresistível.'],
+    description: 'Amendoim selecionado envolvido em caramelo feito na panela, até a casquinha ficar dourada e crocante.',
+    ingredients: ['Amendoim', 'Açúcar', 'Manteiga'],
+    ingredientsFull: 'Ingredientes: amendoim, açúcar, manteiga e uma pitada de amor.',
+    weight: '150 g',
+    characteristics: ['Crocante', 'Caramelizado', 'Irresistível'],
     sensory: [
       { label: 'Crocância', value: 5 },
       { label: 'Doçura', value: 4 },
-      { label: 'Salgado', value: 3 },
+      { label: 'Tosta', value: 4 },
       { label: 'Intensidade', value: 4 },
     ],
-    color: '#E0822F',
-    accentColor: '#FFB05C',
-    background: '#1c0c03',
+    color: '#FF6A00',
+    accentColor: '#FF9A3D',
+    background: '#1a0b03',
     coating: '#7a3510',
     visuals: [
       { kind: 'drop', label: 'Caramelo', color: '#c8641c', accent: '#ffb35a', glossy: true, weight: 1.4 },
       { kind: 'shard', label: 'Caramelo quebrado', color: '#d9832c', accent: '#ffcf85', glossy: true },
-      { kind: 'crystal', label: 'Flor de sal', color: '#f4efe6', glossy: true, weight: 1.2 },
+      { kind: 'crystal', label: 'Açúcar', color: '#f4e6d0', glossy: true, weight: 1.2 },
     ],
-    image: '/images/produto-caramelo-flor-de-sal.webp',
-    buyUrl: '#comprar-caramelo-flor-de-sal',
-    placeholder: true,
+    image: '/images/produto-amendoim-caramelizado.webp',
+    buyUrl: '#comprar-amendoim-caramelizado',
   },
   {
     id: 'cacau-intenso',

@@ -3,6 +3,7 @@ import { copy } from '@/data/copy';
 import { Beat } from '../story/Beat';
 import { Chapter } from '../story/Chapter';
 import { icons } from '../brand/Icons';
+import { Wordmark } from '../brand/Logo';
 import type { BeatCopy } from '@/data/copy';
 
 const beatsOf = (list: readonly BeatCopy[]) => list.map((b, i) => <Beat key={i} {...b} as={b.heading ? 'h2' : 'p'} />);
@@ -12,7 +13,9 @@ export function IntroSection() {
     <Chapter id="intro" label="Abertura">
       <div className="intro__content">
         <h1 className="intro__title">
-          <span className="intro__word intro-anim">{copy.intro.title}</span>
+          <span className="intro__word intro-anim">
+            <Wordmark title={copy.intro.title} />
+          </span>
           <span className="intro__tag intro-anim">{copy.intro.tagline}</span>
         </h1>
       </div>

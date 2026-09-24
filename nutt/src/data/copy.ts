@@ -17,9 +17,9 @@ export type BeatCopy = {
 
 export const copy = {
   intro: {
-    title: 'NUTT',
+    title: 'nutt',
     tagline: 'Você nunca provou amendoim assim.',
-    hint: 'Entre na NUTT',
+    hint: 'Entre na nutt',
   },
   universe: {
     heading: 'Tudo começa aqui.',
@@ -50,7 +50,7 @@ export const copy = {
   },
   crunch: {
     heading: 'The Crunch.',
-    word: 'CRUNCH.',
+    word: 'crunch.',
     beats: [
       { at: [0.05, 0.3], text: 'Crocante por fora.', size: 'md' },
       { at: [0.72, 0.98], text: 'Absurdo por inteiro.', accent: 'Absurdo', size: 'md' },
@@ -65,7 +65,7 @@ export const copy = {
       { at: [0.41, 0.5], text: 'Sabor.', size: 'xl' },
       { at: [0.52, 0.61], text: 'Ingredientes.', size: 'xl' },
       { at: [0.63, 0.72], text: 'Descoberta.', size: 'xl', accent: 'Descoberta.' },
-      { at: [0.76, 0.98], text: 'NUTT.', size: 'xl' },
+      { at: [0.76, 0.98], text: 'nutt.', size: 'xl' },
       { at: [0.8, 0.98], text: 'Você nunca provou amendoim assim.', size: 'sm' },
     ] satisfies BeatCopy[],
   },
@@ -76,10 +76,10 @@ export const copy = {
   why: {
     heading: 'Por que NUTT',
     items: [
-      { id: 'selecionado', title: 'Amendoim selecionado', text: 'Grão a grão. Só entra o que merece virar NUTT.', icon: 'select' },
-      { id: 'natural', title: 'Ingredientes naturais', text: 'Fruta é fruta. Cacau é cacau. Sem atalhos.', icon: 'leaf' },
-      { id: 'artesanal', title: 'Produção artesanal', text: 'Pequenos lotes, tempo certo, mão de quem prova.', icon: 'hand' },
-      { id: 'conecta', title: 'Sabor que conecta', text: 'Feito para dividir. Difícil de dividir.', icon: 'link' },
+      { id: 'selecionado', title: 'Amendoim selecionado', text: 'Grão a grão. Só entra o que merece virar nutt.', icon: 'select' },
+      { id: 'natural', title: 'Ingredientes selecionados', text: 'Ingrediente de verdade. Sem atalhos.', icon: 'leaf' },
+      { id: 'artesanal', title: 'Feito com carinho', text: 'Pequenos lotes, tempo certo, mão de quem prova.', icon: 'heart' },
+      { id: 'conecta', title: 'Sabor que conecta', text: 'Feito para dividir. Difícil de dividir.', icon: 'smile' },
     ],
   },
   final: {
@@ -88,6 +88,6 @@ export const copy = {
     sub: 'Descubra seu sabor.',
   },
   whereToBuy: { heading: 'Onde encontrar' },
-  footer: { signature: 'Sabor que conecta.', lines: ['Tudo começa com um bom ingrediente.', 'O resto é NUTT.'] },
+  footer: { signature: 'Sabor que conecta.', lines: ['O equilíbrio perfeito entre crocância e doçura.', 'O resto é nutt.'] },
   idle: 'Vai ficar só olhando?',
 } as const;

@@ -6,19 +6,19 @@ export const site = {
   // PLACEHOLDER: domínio definitivo (usado em canonical, sitemap, Open Graph e Schema).
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.nutt.com.br',
   locale: 'pt_BR',
-  title: 'NUTT — Você nunca provou amendoim assim.',
+  title: 'nutt — Você nunca provou amendoim assim.',
   description:
     'Amendoins artesanais gourmet. Grãos selecionados, sabores desenvolvidos com ingredientes reais. Entre no universo NUTT.',
   tagline: 'Você nunca provou amendoim assim.',
   signature: 'Sabor que conecta.',
   // PLACEHOLDERS de contato e canais
-  instagram: 'https://www.instagram.com/nutt',
-  instagramHandle: '@nutt',
+  instagram: 'https://www.instagram.com/nutt.oficial',
+  instagramHandle: '@nutt.oficial',
   email: 'contato@nutt.com.br',
   shopUrl: '#sabores',
   resellerUrl: 'mailto:contato@nutt.com.br?subject=Quero%20revender%20NUTT',
   /** Sabor usado nas cenas de transformação e crunch (id em products.ts). */
-  featuredProductId: 'caramelo-flor-de-sal',
+  featuredProductId: 'amendoim-caramelizado',
 } as const;
 
 export type WhereToBuy = { label: string; detail: string; href: string; cta: string };

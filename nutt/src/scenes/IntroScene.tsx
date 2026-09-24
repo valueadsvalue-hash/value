@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
-import { logo } from '@/components/brand/logo';
+import { brand, logo } from '@/components/brand/logo';
 import { createLogoGeometry, logoToWorld } from '@/models/logoGeometry';
 import { clamp, easeIn, easeInOut, easeOut, lerp, range } from '@/utils/math';
 import { store } from '@/utils/store';
@@ -16,14 +16,31 @@ const H = 2;
 
 function useLogoMaterial() {
   return useMemo(() => {
-    const uniforms = { uSweep: { value: -3 }, uGlint: { value: 0 }, uEdge: { value: 0.0 } };
+    // corte diagonal laranja/marrom da identidade, em coordenadas do objeto
+    const a = logoToWorld(logo.brown[0][0], logo.brown[0][1], H);
+    const b = logoToWorld(logo.brown[1][0], logo.brown[1][1], H);
+    const c = logoToWorld(100, 100, H);
+    const side = Math.sign((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x));
+    const uniforms = {
+      uSweep: { value: -3 },
+      uGlint: { value: 0 },
+      uEdge: { value: 0.0 },
+      uA: { value: a },
+      uB: { value: b },
+      uSide: { value: side },
+      uOrange: { value: new THREE.Color(brand.orange) },
+      uBrown: { value: new THREE.Color(brand.brown) },
+    };
     const mat = new THREE.MeshPhysicalMaterial({
-      color: '#0c0b0a',
-      roughness: 0.32,
-      metalness: 0.1,
-      clearcoat: 1,
-      clearcoatRoughness: 0.12,
-      envMapIntensity: 1.2,
+      color: '#ffffff',
+      roughness: 0.42,
+      metalness: 0,
+      clearcoat: 0.55,
+      clearcoatRoughness: 0.28,
+      sheen: 0.4,
+      sheenRoughness: 0.5,
+      sheenColor: new THREE.Color('#ffb070'),
+      envMapIntensity: 1,
     });
     mat.customProgramCacheKey = () => 'nutt-logo';
     mat.onBeforeCompile = (s) => {
@@ -32,16 +49,23 @@ function useLogoMaterial() {
         .replace('#include <common>', '#include <common>\nvarying vec3 vObjPos;')
         .replace('#include <begin_vertex>', '#include <begin_vertex>\nvObjPos = position;');
       s.fragmentShader = s.fragmentShader
-        .replace('#include <common>', '#include <common>\nuniform float uSweep, uGlint, uEdge;\nvarying vec3 vObjPos;')
+        .replace('#include <common>', '#include <common>\nuniform float uSweep, uGlint, uEdge, uSide;\nuniform vec2 uA, uB;\nuniform vec3 uOrange, uBrown;\nvarying vec3 vObjPos;')
+        .replace(
+          '#include <color_fragment>',
+          `#include <color_fragment>
+           vec2 dd = uB - uA;
+           float sd = (dd.x * (vObjPos.y - uA.y) - dd.y * (vObjPos.x - uA.x)) * uSide;
+           diffuseColor.rgb = mix(uOrange, uBrown, smoothstep(-0.004, 0.004, sd));`,
+        )
         .replace(
           '#include <emissivemap_fragment>',
           `#include <emissivemap_fragment>
            float diag = vObjPos.x * 0.9 + vObjPos.y * 0.45;
            float band = exp(-pow((diag - uSweep) / 0.09, 2.0));
            float face = smoothstep(0.2, 0.9, abs(normalize(vNormal).z));
-           totalEmissiveRadiance += vec3(1.0, 0.42, 0.0) * band * uGlint * (0.5 + 0.5 * face) * 2.2;
+           totalEmissiveRadiance += vec3(1.0, 0.62, 0.3) * band * uGlint * (0.5 + 0.5 * face) * 1.6;
            float fres = pow(1.0 - abs(dot(normalize(vNormal), normalize(vViewPosition))), 3.0);
-           totalEmissiveRadiance += vec3(1.0, 0.42, 0.0) * uEdge * (0.25 + fres);`,
+           totalEmissiveRadiance += vec3(1.0, 0.42, 0.0) * uEdge * (0.25 + fres) * 0.6;`,
         );
     };
     return { mat, uniforms };
@@ -88,8 +112,8 @@ export default function IntroScene() {
     setCamera(camera, camPos, target, lerp(32, 48, easeIn(range(p, 0.4, 1))));
 
     setLights({
-      key: ['#fff3e6', lerp(0.4, 1.6, grow) * (1 - fly * 0.8), [2.5, 3, 4]],
-      rim: ['#FF6A00', lerp(2, 9, grow), [-3.5, 1.5, -2]],
+      key: ['#fff3e6', lerp(0.3, 1.8, grow) * (1 - fly * 0.8), [2.5, 3, 4]],
+      rim: ['#FF6A00', lerp(2, 5, grow), [-3.5, 1.5, -2]],
       fill: ['#a34a1f', 0.25],
       env: lerp(0.15, 0.7, grow) * (1 - clamp(fly * 1.4)),
       background: '#000000',

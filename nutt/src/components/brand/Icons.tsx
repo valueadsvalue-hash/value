@@ -22,26 +22,23 @@ export const IconSelect = ({ className }: P) => (
 
 export const IconLeaf = ({ className }: P) => (
   <svg {...base} className={className}>
-    <path d="M10 38C10 20 22 9 40 8c1 18-10 30-28 30Z" />
-    <path d="M10 38 30 18" />
-    <path d="M18 30h8M22 26v-7" opacity=".6" />
+    <path d="M24 42c-9-4-13-12-12-21 1-7 6-12 12-15 6 3 11 8 12 15 1 9-3 17-12 21Z" />
+    <path d="M24 42V14" />
+    <path d="m24 24 6-5M24 31l7-5M24 24l-6-5M24 31l-7-5" opacity=".7" />
   </svg>
 );
 
-export const IconHand = ({ className }: P) => (
+export const IconHeart = ({ className }: P) => (
   <svg {...base} className={className}>
-    <path d="M8 30c6 0 10 3 12 7h14c3 0 6-2 6-5" />
-    <path d="M20 37c-2-3-2-7 1-9l7-5" />
-    <ellipse cx="30" cy="14" rx="5" ry="7" transform="rotate(35 30 14)" />
-    <path d="M30 10v8" opacity=".5" transform="rotate(35 30 14)" />
+    <path d="M24 40S7 30 7 18c0-6 4.5-10 9.5-10 3.4 0 6 1.8 7.5 4.5C25.5 9.8 28.1 8 31.5 8 36.5 8 41 12 41 18c0 12-17 22-17 22Z" />
   </svg>
 );
 
-export const IconLink = ({ className }: P) => (
+export const IconSmile = ({ className }: P) => (
   <svg {...base} className={className}>
-    <circle cx="18" cy="24" r="10" />
-    <circle cx="30" cy="24" r="10" />
-    <path d="M24 16v16" opacity=".5" />
+    <circle cx="16" cy="12" r="2.5" />
+    <circle cx="32" cy="12" r="2.5" />
+    <path d="M9 22c0 9 6.5 16 15 16s15-7 15-16" />
   </svg>
 );
 
@@ -68,4 +65,4 @@ export const IconArrow = ({ className, dir = 'right' }: P & { dir?: 'left' | 'ri
   );
 };
 
-export const icons = { select: IconSelect, leaf: IconLeaf, hand: IconHand, link: IconLink } as const;
+export const icons = { select: IconSelect, leaf: IconLeaf, heart: IconHeart, smile: IconSmile } as const;
