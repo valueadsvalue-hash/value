@@ -48,9 +48,9 @@ export default function FlavorTransformation() {
     const warm = range(p, 0.3, 1);
     setLights({
       key: ['#fff4ea', lerp(2.2, 2.8, warm), [2.5, 3.5, 3]],
-      rim: [`#${new THREE.Color('#FF6A00').lerp(accent, warm * 0.5).getHexString()}`, lerp(4, 6.5, warm), [-3, 1.5, -3]],
+      rim: [`#${new THREE.Color('#ff8a3d').lerp(accent, warm * 0.5).getHexString()}`, lerp(3.5, 5, warm), [-3, 1.5, -3]],
       fill: ['#a34a1f', 0.4],
-      env: lerp(0.8, 1.2, warm),
+      env: lerp(0.8, 1, warm),
       background: '#000000',
       fog: 0,
       bloom: lerp(0.45, 0.8, range(p, 0.75, 1)),

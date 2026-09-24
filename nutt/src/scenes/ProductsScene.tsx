@@ -90,7 +90,7 @@ export default function ProductsScene() {
       st.cam.set(0, lerp(-0.3, -0.5, dE), lerp(7.4, 3.8, dE));
       st.look.set(0, lerp(-0.5, -0.6, dE), 0);
     } else {
-      st.cam.set(lerp(0, 0.66, dE), lerp(-0.2, 0.02, dE), lerp(6.2, 3.3, dE));
+      st.cam.set(lerp(0, 0.66, dE), lerp(-0.2, 0.05, dE), lerp(6.2, 4.1, dE));
       st.look.set(lerp(0, 0.66, dE), lerp(-0.42, 0, dE), 0);
     }
     setCamera(camera, st.cam, st.look, lerp(32, 30, dE));
