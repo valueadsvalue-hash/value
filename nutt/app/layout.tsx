@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* marca "js" antes da pintura: animações só existem com JS (conteúdo visível sem ele) */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
-      <body>{children}</body>
+      <body className={`${display.variable} ${text.variable}`}>{children}</body>
     </html>
   );
 }

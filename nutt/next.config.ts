@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   images: { unoptimized: true },
+  // Preview como Artifact (claude.ai): caminhos relativos em vez de /_next/.
+  ...(process.env.RELATIVE_ASSETS ? { assetPrefix: '.' } : {}),
   transpilePackages: ['three'],
 };
 

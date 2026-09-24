@@ -15,7 +15,7 @@ import { makeCanvas, toTexture } from './canvas';
 const cache = new Map<string, { map: THREE.Texture; roughness: THREE.Texture; back: THREE.Texture }>();
 
 const cssFont = (name: string, fallback: string) => {
-  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const v = getComputedStyle(document.body).getPropertyValue(name).trim();
   return v || fallback;
 };
 const displayFont = () => cssFont('--font-display', 'Sniglet, sans-serif');
