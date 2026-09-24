@@ -87,7 +87,7 @@ export default function ProductsScene() {
 
     // câmera: vista do carrossel -> close no pouch (pouch à esquerda no desktop, acima no mobile)
     if (mobile) {
-      st.cam.set(0, lerp(-0.3, -0.5, dE), lerp(4.6, 2.5, dE));
+      st.cam.set(0, lerp(-0.3, -0.62, dE), lerp(4.8, 3.3, dE));
       st.look.set(0, lerp(-0.5, -0.6, dE), 0);
     } else {
       st.cam.set(lerp(0, 0.66, dE), lerp(-0.2, 0.05, dE), lerp(6.2, 4.1, dE));
