@@ -105,7 +105,7 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- tipografia ---------- */
 .display {
   font-family: var(--display);
-  font-weight: 800;
+  font-weight: 400;
   text-transform: lowercase;
   letter-spacing: -0.015em;
   line-height: 0.95;
@@ -161,7 +161,7 @@ html.js.is-loading .header, html.js.intro-pending .header { opacity: 0; transfor
   position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.7em;
   min-height: 44px; padding: 0 1.5em; border-radius: 999px;
   background: var(--bg); color: #000;
-  font-family: var(--display); font-weight: 800; font-size: 1rem; letter-spacing: 0.01em; text-transform: lowercase;
+  font-family: var(--display); font-weight: 400; font-size: 1.05rem; letter-spacing: 0.01em; text-transform: lowercase;
   transition: background 0.4s var(--ease), color 0.4s var(--ease), box-shadow 0.4s var(--ease);
   will-change: transform;
   isolation: isolate; overflow: hidden;
@@ -221,8 +221,8 @@ main { position: relative; z-index: 2; }
   margin: 0;
   max-width: min(16ch, 92vw);
   text-align: center;
-  font-family: var(--display); font-weight: 800; text-transform: lowercase;
-  letter-spacing: -0.015em; line-height: 0.96;
+  font-family: var(--display); font-weight: 400; text-transform: lowercase;
+  letter-spacing: -0.02em; line-height: 0.98;
   --in: 0; --out: 0;
   opacity: calc(1 - var(--out));
   transform: translate3d(0, calc(var(--out) * -0.35em), 0);
@@ -309,7 +309,7 @@ html.js .intro-anim { opacity: 0; }
 .products__head { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
 .products__title { margin: 8px 0 0; font-size: clamp(2.4rem, 6vw, 6rem); }
 .products__current { align-self: end; display: grid; gap: 22px; justify-items: center; text-align: center; }
-.products__name { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 3.8vw, 3.4rem); text-transform: lowercase; line-height: 1; margin: 0; }
+.products__name { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 3.8vw, 3.4rem); text-transform: lowercase; line-height: 1; margin: 0; }
 .products__sub { color: var(--ink-2); margin: 6px 0 0; }
 .products__controls { display: flex; gap: 12px; align-items: center; }
 .flavor-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; list-style: none; margin: 20px 0 0; padding: 0; }
@@ -409,7 +409,7 @@ html.detail-open .products__frame, html.detail-open .header__nav, html.detail-op
 }
 .where__row::before { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.7s var(--ease); }
 .where__row:hover::before, .where__row:focus-visible::before { transform: scaleX(1); }
-.where__label { font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 2.6vw, 2.2rem); text-transform: lowercase; }
+.where__label { font-family: var(--display); font-weight: 400; font-size: clamp(1.4rem, 2.6vw, 2.2rem); text-transform: lowercase; }
 .where__detail { color: var(--ink-2); }
 .where__go { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); }
 .where__go svg { width: 18px; transition: transform 0.5s var(--ease); }
@@ -451,7 +451,7 @@ html.js.is-loading .sound-toggle, html.js.intro-pending .sound-toggle { opacity:
   transform: translate(-50%, 20px); opacity: 0;
   padding: 12px 20px; border-radius: 999px;
   background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px rgba(255, 106, 0, 0.35);
-  font-family: var(--display); font-weight: 800; text-transform: lowercase; font-size: 1.05rem;
+  font-family: var(--display); font-weight: 400; text-transform: lowercase; font-size: 1.1rem;
   transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
   pointer-events: none;
 }

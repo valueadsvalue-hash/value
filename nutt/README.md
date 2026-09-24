@@ -15,6 +15,8 @@ Adicione `?debug` à URL para expor `window.__nutt` (estado da experiência) em 
 
 ## Stack
 
+Identidade: Sniglet · laranja `#FF6A00` · marrom `#A34A1F` · preto · wordmark "nutt" em dois tons.
+
 Next.js (App Router, export estático) · React · TypeScript · Three.js via React Three Fiber
 + drei · @react-three/postprocessing · GSAP + ScrollTrigger · Lenis · GLSL (`onBeforeCompile`)
 · Web Audio (síntese).
@@ -46,9 +48,9 @@ Quando houver modelo real, preencha `model` (GLB com Draco em `/public/models`).
 
 | O quê | Onde |
 |---|---|
-| **Linha de sabores, ingredientes, peso, perfil sensorial** (os atuais são EXEMPLOS de estrutura) | `src/data/products.ts` |
-| Símbolo NUTT oficial (SVG) — o atual é um "n" provisório | `src/components/brand/logo.ts` (+ `public/icon.svg`) |
-| Fonte Singlet (licença web) — hoje Nunito + Manrope | `app/fonts.ts` |
+| **Sabores além do Amendoim Caramelizado** (os outros 5 são EXEMPLOS de estrutura, `placeholder: true`) | `src/data/products.ts` |
+| Confirmar texto legal do Amendoim Caramelizado (ingredientes/peso vieram do mockup do board) | `src/data/products.ts` |
+| Wordmark/símbolo: recriados em vetor a partir do board — trocar pelos SVGs oficiais se existirem | `src/components/brand/logo.ts` (+ `public/icon.svg`) |
 | Domínio, Instagram, e-mail, links de compra, pontos de venda | `src/data/site.ts` |
 | Imagem Open Graph e fotos de produto | `public/og.png`, `public/images/` |
 | Textos de privacidade e termos | `app/privacidade`, `app/termos` |

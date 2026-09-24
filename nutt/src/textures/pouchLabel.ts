@@ -226,7 +226,7 @@ export function wordTexture(word: string, color = brand.orange) {
   ctx.fillStyle = color;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.font = `800 380px ${displayFont()}`;
+  ctx.font = `400 400px ${displayFont()}`;
   ctx.fillText(word, 1024, 250);
   return toTexture(c);
 }

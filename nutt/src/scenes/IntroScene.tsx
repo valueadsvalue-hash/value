@@ -105,10 +105,10 @@ export default function IntroScene() {
     m.position.y = (store.reduced ? 0 : Math.sin(t * 0.6) * 0.03) * settle;
 
     // composição de repouso: símbolo acima do centro, NUTT + tagline abaixo (DOM)
-    const z = lerp(7.8, -2.6, fly);
-    const y = lerp(-0.62, passage.y, easeInOut(range(p, 0, 0.7)));
+    const z = lerp(9.6, -2.6, fly);
+    const y = lerp(-0.8, passage.y, easeInOut(range(p, 0, 0.7)));
     camPos.set(0, y, z);
-    target.set(0, lerp(-0.62, passage.y, easeInOut(range(p, 0, 0.6))), z - 5);
+    target.set(0, lerp(-0.8, passage.y, easeInOut(range(p, 0, 0.6))), z - 5);
     setCamera(camera, camPos, target, lerp(32, 48, easeIn(range(p, 0.4, 1))));
 
     setLights({

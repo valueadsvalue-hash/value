@@ -210,15 +210,15 @@ flutuantes, textos e modelo vêm de `src/data/products.ts`.
 
 | Asset | Status atual | Produção final recomendada |
 |---|---|---|
-| Símbolo NUTT (SVG vetorial oficial) | **Placeholder** "n" arredondado em `src/components/brand/logo.ts` | Enviar SVG oficial — basta trocar o `path`; extrusão 3D, loader e favicon se atualizam |
-| Fonte Singlet (licença web) | Substituída por **Nunito** (títulos) + **Manrope** (texto) | Licenciar Singlet em WOFF2 e trocar em `app/fonts.ts` |
+| Wordmark "nutt" e símbolo "n" (dois tons) | **Recriados em vetor** a partir do board de identidade (`src/components/brand/logo.ts`) | Substituir pelos SVGs oficiais, se existirem — mesmas chaves |
+| Tipografia | **Sniglet** (Google Fonts, a da identidade) + Manrope em textos corridos pequenos | — |
 | Modelo 3D do pouch | Procedural + rótulo gerado em canvas | Fotogrametria ou modelagem (Blender) ≤ 15k tris, Draco, texturas KTX2 2k (base, ORM, normal) |
 | Grão de amendoim (cru, tostado, cada cobertura) | Procedural (geometria + texturas + shader) | Scan macro de grão real → retopo 3–5k tris; normal/roughness 2k KTX2 |
 | Ingredientes (fruta, cacau, café, especiarias…) | Primitivas procedurais estilizadas | **Fotografia real** recortada (sprites WebP/AVIF com alpha) ou scans 3D — comunicar "ingredientes reais" pede realismo fotográfico |
 | Fotografia de produto | Não existe | Still de cada pouch (fundo preto, luz lateral laranja) em AVIF/WebP — usado em OG, Schema e fallback sem WebGL |
 | Imagem Open Graph | SVG gerado (`public/og.svg`) + PNG | Arte final 1200×630 |
 | Sons | Síntese Web Audio | Foley real (crunch gravado com microfone de contato), mix em -24 LUFS, Opus/AAC < 60 KB cada |
-| Linha de sabores, ingredientes, peso, perfil sensorial | **Exemplos** marcados como `placeholder` | Dados oficiais da marca — **nunca publicar os exemplos** |
+| Linha de sabores, ingredientes, peso, perfil sensorial | Amendoim Caramelizado 150 g (do board) + 5 **exemplos** marcados como `placeholder` | Dados oficiais da marca — **nunca publicar os exemplos** |
 | URLs (loja, Instagram, e-mail, domínio) | Placeholders em `src/data/site.ts` | Dados reais |
 
 ---
