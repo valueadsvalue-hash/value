@@ -77,7 +77,10 @@ export function setCamera(cam: THREE.Camera, pos: THREE.Vector3Like, target: THR
     }
   }
   const pc = cam as THREE.PerspectiveCamera;
-  if (fov && pc.isPerspectiveCamera && Math.abs(pc.fov - fov) > 0.01) {
+  if (fov && pc.isPerspectiveCamera) {
+    // em telas retrato, abre o FOV vertical para manter o enquadramento horizontal da cena
+    if (pc.aspect < 1) fov = (2 * Math.atan(Math.tan((fov * Math.PI) / 360) / Math.max(pc.aspect, 0.4) * 0.72) * 180) / Math.PI;
+    if (Math.abs(pc.fov - fov) < 0.01) return;
     pc.fov = fov;
     pc.updateProjectionMatrix();
   }
